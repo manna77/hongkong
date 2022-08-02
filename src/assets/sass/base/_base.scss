@@ -28,6 +28,10 @@ ul {
 	&.active {
 		z-index: 111;
 	}
+	&.active-color {
+		z-index: 111;
+		background-color: hsl(var(--dark) / 0.6);
+	}
 }
 
 .scrollToTop {

@@ -27,64 +27,112 @@
     <div class="overlay"></div>
     <a href="javascript::void(0)" class="scrollToTop"><i class="las la-chevron-up"></i></a>
 
-
-<div class="body-content container-fluid">
-    <div class="top-area w-100 py-5">
-        <div class="search-box d-flex flex-wrap align-items-center">
-            <h3 class="title">Album</h3>
-            <form class="search-form">
-                <div class="form-group">
-                    <span class="search-icon"><i class="las la-search"></i></span>
-                    <input type="text" placeholder="Search High-Resolution photos" class="form--control w-100">
-                </div>
-            </form>
-        </div>
-        <div class="d-flex flex-wrap justify-content-between">
-            <div class="button-left gy-3 d-flex flex-wrap">
-                <a href="#0" class="cmn--btn">Scan</a>
-                <a href="#0" class="cmn--btn">Purchase</a>
+<div class="main-wrapper d-flex flex-wrap">
+    <div class="menu-sidebar">
+        <div class="logo"><img src="assets/images/logo.png" alt="logo"></div>
+        <ul class="menu">
+            <li><a href="index.html"><img src="assets/images/icon/gallery.png" alt=""> Gallery</a></li>
+            <li><a href="profile.html"><img src="assets/images/icon/profile.png" alt=""> Profile</a></li>
+            <li><a href="package.html"><img src="assets/images/icon/package.png" alt=""> Package</a></li>
+            <li><a href="qr.html"><img src="assets/images/icon/qr.png" alt=""> My QR</a></li>
+            <li><a href="shop.html"><img src="assets/images/icon/shop.png" alt=""> Shop</a></li>
+            <li><a href="cart.html"><img src="assets/images/icon/cart.png" alt=""> Cart</a></li>
+        </ul>
+        <ul class="menu mt-auto">
+            <li>
+                <a href="faq.html"><img src="assets/images/icon/faq.png" alt=""> FAQs</a>
+            </li>
+            <li>
+                <a href="faq.html"><img src="assets/images/icon/logout.png" alt=""> Logout</a>
+            </li>
+        </ul>
+    </div>
+    <div class="body-content">
+        <div class="top-area">
+            <div class="search-box d-flex flex-wrap align-items-center">
+                <h3 class="title">Album</h3>
+                <form class="search-form">
+                    <div class="form-group">
+                        <span class="search-icon"><i class="las la-search"></i></span>
+                        <input type="text" placeholder="Search High-Resolution photos" class="form--control w-100">
+                    </div>
+                </form>
             </div>
-            <div class="select-right">
-                <select class="form-select form--control gy-4 pe-5">
+            <div class="d-flex flex-wrap justify-content-between mb-5 gap-4">
+                <div class="d-flex flex-wrap gap-4">
+                    <a href="#0" class="cmn--btn">Scan</a>
+                    <a href="#0" class="cmn--btn">Purchase</a>
+                </div>
+                <select class="form-select form--control ps-4 pe-5 w-auto">
                     <option>Photos</option>
                     <option>Videos</option>
                 </select>
             </div>
         </div>
-    </div>
-    <div class="gallery-wrapper row gy-5">
-        <div class="col-lg-4 col-6">
-            <div class="gallery-item">
-                <img src="assets/images/thumb/gallery1.png" alt="thumb">
+        <div class="gallery-wrapper row gy-5">
+            <div class="col-lg-4 col-6">
+                <div class="gallery-item">
+                    <img src="assets/images/thumb/gallery1.png" alt="thumb">
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-6">
-            <div class="gallery-item">
-                <img src="assets/images/thumb/gallery2.png" alt="thumb">
+            <div class="col-lg-4 col-6">
+                <div class="gallery-item">
+                    <img src="assets/images/thumb/gallery2.png" alt="thumb">
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-6">
-            <div class="gallery-item">
-                <img src="assets/images/thumb/gallery3.png" alt="thumb">
+            <div class="col-lg-4 col-6">
+                <div class="gallery-item">
+                    <img src="assets/images/thumb/gallery3.png" alt="thumb">
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-6">
-            <div class="gallery-item">
-                <img src="assets/images/thumb/gallery4.png" alt="thumb">
+            <div class="col-lg-4 col-6">
+                <div class="gallery-item">
+                    <img src="assets/images/thumb/gallery4.png" alt="thumb">
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-6">
-            <div class="gallery-item">
-                <img src="assets/images/thumb/gallery5.png" alt="thumb">
+            <div class="col-lg-4 col-6">
+                <div class="gallery-item">
+                    <img src="assets/images/thumb/gallery5.png" alt="thumb">
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-6">
-            <div class="gallery-item">
-                <img src="assets/images/thumb/gallery6.png" alt="thumb">
+            <div class="col-lg-4 col-6">
+                <div class="gallery-item">
+                    <img src="assets/images/thumb/gallery6.png" alt="thumb">
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Gallery Popup -->
+<div class="gallery-item style--two gallery-modal">
+    <img src="assets/images/thumb/gallery1.png" alt="thumb">
+    <a href="javascript:void(0)" class="cmn--btn d-block text-center mt-4 download-btn">Download</a>
+    <a href="javascript:void(0)" class="cmn--btn d-block text-center mt-4 active share-btn">Share</a>
+</div>
+<!-- Gallery Popup -->
+
+<!-- Share Popup -->
+<div class="popup-wrapper share-modal">
+    <p class="text-center fs--20px mb-4">Share in you social networks </p>
+    <ul class="social-links d-flex flex-wrap gap-3">
+        <li><a href="javascript:void(0)"><i class="fas fa-copy"></i></a></li>
+        <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href=""><i class="fab fa-twitter"></i></a></li>
+        <li><a href=""><i class="fab fa-instagram"></i></a></li>
+    </ul>
+</div>
+<!-- Share Popup -->
+
+<!-- Share Success -->
+<div class="popup-wrapper success-modal">
+    <div class="d-flex flex-wrap align-items-center justify-content-center flex-column h-100">
+        <img src="assets/images/icon/success.png" alt="icon">
+        <p class="fs--20px mt-2 text-center">Download Succeeded !</p>
+    </div>
+    <span class="modal-close"><i class="las la-times"></i></span>
+</div>
+<!-- Share Success -->
 
 
 

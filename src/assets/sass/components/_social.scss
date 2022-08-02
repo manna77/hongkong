@@ -1,0 +1,18 @@
+.social-links {
+	li {
+		a {
+			width: 80px;
+			height: 80px;
+            @extend %flex-center;
+            border: 2px solid hsl(var(--base));
+            font-size: 26px;
+            border-radius: 50%;
+            color: hsl(var(--base));
+            &:hover {
+                color: hsl(var(--white));
+                background-color: hsl(var(--base));
+
+            }
+		}
+	}
+}

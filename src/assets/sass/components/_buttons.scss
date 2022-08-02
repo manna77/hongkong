@@ -41,9 +41,14 @@
 
 .cmn--btn {
 	background-color: hsl(var(--base));
-	&:hover {
+	&:hover, &.active {
 		background: transparent;
 		color: hsl(var(--base));
+	}
+	&.active:hover {
+		color: hsl(var(--white));
+		background-color: hsl(var(--base));
+
 	}
 }
 

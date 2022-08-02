@@ -1,33 +1,125 @@
 .search-box {
-    margin-bottom: 30px;
-    .title {
-        padding-right: 30px;
-        width: 140px;
-    }
+	margin-bottom: 30px;
+	.title {
+		padding-right: 30px;
+		width: 140px;
+		color: hsl(var(--base-900));
+	}
 }
 .search-form {
-    width: calc(100% - 140px);
-    position: relative;
-    .search-icon {
-        position: absolute;
-        transform: translateY(-50%);
-        align-items: center;
-        @extend %flex;
-        top: 50%;
-        left: 30px;
-        font-size: 30px;
-        }
-        .form--control {
-            padding-left: 80px;
-            height: 86px;
-            border-radius: 15px;
-        }
+	width: calc(100% - 140px);
+	position: relative;
+	.search-icon {
+		position: absolute;
+		transform: translateY(-50%);
+		align-items: center;
+		@extend %flex;
+		top: 50%;
+		left: 30px;
+		font-size: 30px;
+	}
+	.form--control {
+		padding-left: 80px;
+		height: 86px;
+		border-radius: 15px;
+		box-shadow: 0 4px 4px hsl(var(--dark) / 0.15) !important;
+	}
+}
+.top-area {
+	.form-select {
+		min-width: 220px;
+		height: 60px;
+	}
 }
 .gallery-item {
-    padding: 25px 20px;
-    background-color: hsl(var(--base) / 0.099);
-    border-radius: 10px;
-    img {
-        width: 100%;
-    }
+	padding: 20px;
+	background-color: hsl(var(--base) / 0.099);
+	border-radius: 10px;
+	img {
+		width: 100%;
+	}
+	&.style--two {
+		background-color: hsl(var(--white));
+		border-radius: 15px;
+	}
 }
+// Gallery Modal
+.gallery-modal,
+.share-modal,
+.success-modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 710px;
+	z-index: 111;
+	display: none;
+}
+.share-modal {
+	width: auto;
+}
+.popup-wrapper {
+	padding: 30px;
+	border-radius: 20px;
+	background-color: hsl(var(--white));
+}
+.success-modal {
+	width: 450px;
+	height: 400px;
+	background-color: hsl(var(--white));
+	border-radius: 20px;
+	text-align: center;
+	vertical-align: center;
+}
+.modal-close {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	line-height: 1;
+	padding: 10px;
+	font-size: 18px;
+	cursor: pointer;
+}
+// Gallery Modal
+
+// Main Css
+.menu-sidebar {
+	width: 260px;
+	min-height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	border-right: 1px solid hsl(var(--border));
+	.logo {
+		margin: 40px auto 40px;
+		text-align: center;
+	}
+}
+.menu {
+	li {
+		width: 100%;
+		a {
+			padding: 20px 50px;
+			padding-right: 15px;
+			display: block;
+			font-size: 24px;
+			&.active,
+			&:hover {
+				color: hsl(var(--body));
+				background-color: hsl(var(--base-two));
+			}
+		}
+		img {
+			width: 32px;
+			height: 32px;
+			object-fit: contain;
+			margin-right: 25px;
+		}
+	}
+}
+.body-content {
+	width: calc(100% - 260px);
+	margin-left: auto;
+	padding: 50px 60px;
+}
+// Main Css

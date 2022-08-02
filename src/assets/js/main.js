@@ -160,3 +160,34 @@ $(".menu li a").each(function () {
 		$(this).addClass("active");
 	}
 });
+
+// Gallery Modal
+$(".gallery-item").on("click", function (e) {
+	$(".gallery-modal").show(300);
+	$(".overlay").addClass("active-color");
+});
+$(".overlay, .modal-close").on("click", function (e) {
+	$(".overlay").removeClass("active-color");
+	$(".gallery-modal").hide(300);
+	$(".share-modal").hide(300);
+	$(".success-modal").hide(300);
+});
+// Gallery Modal
+
+// Share Modal
+$(".share-btn").on("click", function (e) {
+	$(".gallery-modal").hide();
+	e.stopPropagation();
+	$(".share-modal").show();
+	$(".overlay").addClass("active-color");
+});
+// Share Modal
+
+// Download Success
+$(".download-btn").on("click", function (e) {
+	$(".gallery-modal").hide();
+	e.stopPropagation();
+	$(".success-modal").show();
+	$(".overlay").addClass("active-color");
+});
+// Download Success
