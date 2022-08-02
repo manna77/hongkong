@@ -1,0 +1,33 @@
+.search-box {
+    margin-bottom: 30px;
+    .title {
+        padding-right: 30px;
+        width: 140px;
+    }
+}
+.search-form {
+    width: calc(100% - 140px);
+    position: relative;
+    .search-icon {
+        position: absolute;
+        transform: translateY(-50%);
+        align-items: center;
+        @extend %flex;
+        top: 50%;
+        left: 30px;
+        font-size: 30px;
+        }
+        .form--control {
+            padding-left: 80px;
+            height: 86px;
+            border-radius: 15px;
+        }
+}
+.gallery-item {
+    padding: 25px 20px;
+    background-color: hsl(var(--base) / 0.099);
+    border-radius: 10px;
+    img {
+        width: 100%;
+    }
+}
