@@ -131,8 +131,23 @@ if (counter) {
 	});
 }
 
+// Shop Cart 
+$(".minus-plus").on("click", function () {
+	var oldValue = $(this).siblings("input").val();
+	if ($(this).hasClass("cart-plus")) {
+		var newVal = parseFloat(oldValue) + 01;
+	} else {
+		if (oldValue > 1) {
+			var newVal = parseFloat(oldValue) - 01;
+		} else {
+			newVal = 01;
+		}
+	}
+	$(this).siblings("input").val(newVal);
+});
+
 //Faq
-$(".faq-item__title").on("click", function (e) {
+$(".faq-header").on("click", function (e) {
 	var element = $(this).parent(".faq-item");
 	if (element.hasClass("open")) {
 		element.removeClass("open");

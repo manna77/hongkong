@@ -123,3 +123,217 @@
 	padding: 50px 60px;
 }
 // Main Css
+
+// Profile Section Starts Here 
+.user-wrapper {
+	.user-thumb {
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		overflow: hidden;
+		padding: 5px;
+		box-shadow: 0px 1px 4px hsl(var(--dark) / .3);
+		img {
+			width: 100%;
+			display: block;
+		}
+	}
+	.cmn--btn {
+		border-radius: 25px;
+	}
+}
+.package-table {
+	padding: 30px 100px 50px;
+	border-radius: 30px;
+	background: #F9F9F9;
+}
+.table-title {
+	font-style: italic;
+	font-weight: 500;
+	text-decoration: underline;
+}
+// Profile Section Ends Here 
+
+// Package Section Starts Here 
+.package-item {
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0px 0px 3px hsl(var(--dark) / .5);
+	&__thumb {
+		position: relative;
+		.base {
+			position: absolute;
+			top: 15px;
+			left: 15px;
+			background-color: hsl(var(--primary) / .9);
+			font-weight: 400;
+			padding: 4px 15px;
+			border-radius: 10px;
+		}
+		img {
+			width: 100%;
+		}
+	}
+	&__content {
+		padding: 30px;
+		.video-photo {
+			span {
+				color: #C9B4B4;
+			}
+		}
+	}
+	.cmn--btn {
+		border-radius: 0px;
+		font-size: 18px;
+		&:hover {
+			background-color: hsl(var(--base));
+			color: hsl(var(--white));
+		}
+	}
+}
+// Package Section Ends Here 
+
+// Shop Section Starts Here
+.filter {
+	li {
+		a {
+			font-size: 22px;
+			border-bottom: 2px solid transparent;
+			color: hsl(var(--body));
+			padding: 0;
+			&:hover {
+				color: hsl(var(--base-three));
+				border-color:  hsl(var(--base-three));
+			}
+			&.active {
+				border-color:  hsl(var(--base-three));
+				color: hsl(var(--base-three));
+			}
+		}
+	}
+}
+
+.cart-item {
+	padding: 8px 8px 30px;
+	border: 1px solid hsl(var(--border));
+	border-radius: 10px;
+	img {
+		width: 100%;
+		border-radius: 10px;
+		overflow: hidden;
+	}
+}
+.cart-right {
+	.product-number {
+		border: none;
+		width: 50px;
+		height: 50px;
+		border-radius: 4px;
+		background-color: hsl(var(--base) / 0.099);
+		@include breakpoint (max-xxl) {
+			width: 40px;
+			height: 40px;
+		}
+		&:focus {
+			outline: none;
+		}
+	}
+	.minus-plus {
+		cursor: pointer;
+		@include breakpoint (max-xxl) {
+			font-size: 13px;
+		}
+	}
+}
+
+// Shop Section Ends Here
+
+// QR Section Starts Here 
+.qr-title {
+	font-size: 40px;
+}
+.qr-wrapper {
+	.qr-thumb {
+		padding: 15px;
+		background-color: hsl(var(--base) / 0.099);
+		border-radius: 10px;
+		img {
+			width: 100%;
+		}
+	}
+}
+// QR Section Ends Here 
+
+
+// Faq Section Starts Here 
+.faq-header {
+	position: relative;
+	cursor: pointer;
+	.faq-icon {
+		position: absolute;
+		right: 0px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background-color: hsl(var(--dark));
+		@include breakpoint (max-sm) {
+			width: 40px;
+			height: 40px;
+		}
+		&::before, &::after {
+			position: absolute;
+			content: '';
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			@include transition;
+			background-color: hsl(var(--white));
+		}
+		&::before {
+			width: 3px;
+			height: 20px;
+			@include breakpoint (max-sm) {
+				width: 2px;
+				height: 15px;
+			}
+		}
+		&::after {
+			width: 20px;
+			height: 3px;
+			@include breakpoint (max-sm) {
+				width: 15px;
+				height: 2px;
+			}
+		}
+	}
+}
+.faq-item__title {
+	@include breakpoint (max-sm) {
+		font-size: 18px;
+	}
+}
+.faq-item {
+	border-top: 1px solid hsl(var(--border));
+	.faq-item__content {
+	display: none;
+	p {
+		@include breakpoint (max-sm) {
+			font-size: 14px;
+		}
+	}
+	}
+	&.active {
+		.faq-item__content {
+			display: block;
+		}
+	}
+	&.open {
+		.faq-icon {
+			&::before {
+				height: 0px;
+			}
+		}
+	}
+}

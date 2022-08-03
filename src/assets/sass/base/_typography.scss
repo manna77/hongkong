@@ -31,7 +31,7 @@ h1 {
 	}
 }
 h2 {
-	font-size: 30px;
+	font-size: 35px;
 	@include breakpoint(max-md) {
 		font-size: 26px;
 	}
@@ -51,20 +51,11 @@ h3 {
 }
 h4 {
 	font-size: 24px;
-	@include breakpoint(max-md) {
-		font-size: 22px;
-	}
-	@include breakpoint(max-sm) {
-		font-size: 20px;
-	}
-}
-h4 {
-	font-size: 22px;
-	@include breakpoint(max-xl) {
+	@include breakpoint(max-xxl) {
 		font-size: 20px;
 	}
 	@include breakpoint(max-sm) {
-		font-size: 18px;
+		font-size: 20px;
 	}
 }
 h5 {

@@ -4,9 +4,14 @@
 	color: hsl(var(--base));
 }
 .badge--primary {
-	background-color: hsl(var(--primary) / 0.15);
+	background-color: hsl(var(--primary));
 	border: 1px solid hsl(var(--primary));
-	color: hsl(var(--primary));
+	color: hsl(var(--white));
+}
+.badge--three {
+	background-color: hsl(var(--base-three));
+	border: 1px solid hsl(var(--base-three));
+	color: hsl(var(--white));
 }
 .badge--secondary {
 	background-color: hsl(var(--secondary) / 0.15);
@@ -41,7 +46,9 @@
 
 .badge {
 	border-radius: 18px;
-	padding: 4px 15px;
+	padding: 7px 15px;
+	border-radius: 4px;
+	font-weight: 400;
 	&.badge--icon {
 		padding: 5px;
 		border-radius: 5px;
