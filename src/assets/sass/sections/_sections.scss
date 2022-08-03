@@ -1,5 +1,7 @@
 .search-box {
-	margin-bottom: 30px;
+	@include breakpoint(lg) {
+		margin-bottom: 30px;
+	}
 	.title {
 		padding-right: 30px;
 		width: 140px;
@@ -9,6 +11,20 @@
 .search-form {
 	width: calc(100% - 140px);
 	position: relative;
+	@include breakpoint(max-lg) {
+		position: fixed;
+		left: 50%;
+		width: 90%;
+		visibility: hidden;
+		opacity: 0;
+		transition: all ease 0.3s;
+		transform: translateX(-50%);
+		&.active {
+			visibility: visible;
+			opacity: 1;
+			z-index: 111;
+		}
+	}
 	.search-icon {
 		position: absolute;
 		transform: translateY(-50%);
@@ -16,25 +32,52 @@
 		@extend %flex;
 		top: 50%;
 		left: 30px;
-		font-size: 30px;
+		font-size: 28px;
+		background-color: transparent;
+		border: 0 !important;
+		outline: 0 !important;
+		box-shadow: none !important;
+		padding: 0;
+		@include breakpoint(max-lg) {
+			font-size: 22px;
+		}
+		@include breakpoint(max-lg) {
+			font-size: 18px;
+		}
 	}
 	.form--control {
 		padding-left: 80px;
-		height: 86px;
+		height: 80px;
 		border-radius: 15px;
 		box-shadow: 0 4px 4px hsl(var(--dark) / 0.15) !important;
+		font-size: 20px;
+		@include breakpoint(max-xl) {
+			font-size: 18px;
+			height: 70px;
+		}
+		@include breakpoint(max-md) {
+			font-size: 16px;
+		}
 	}
 }
 .top-area {
 	.form-select {
 		min-width: 220px;
-		height: 60px;
+		height: 55px;
+		@include breakpoint(max-xxl) {
+			height: 50px;
+			font-size: 18px;
+			min-width: 150px;
+		}
 	}
 }
 .gallery-item {
 	padding: 20px;
 	background-color: hsl(var(--base) / 0.099);
 	border-radius: 10px;
+	@include breakpoint(max-md) {
+		padding: 0;
+	}
 	img {
 		width: 100%;
 	}
@@ -51,9 +94,18 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 710px;
+	max-width: 710px;
+	width: 100%;
 	z-index: 111;
 	display: none;
+	overflow: auto;
+	@include breakpoint(max-lg) {
+		padding: 30px;
+		width: 90%;
+	}
+	@include breakpoint(max-sm) {
+		padding: 20px;
+	}
 }
 .share-modal {
 	width: auto;
@@ -85,14 +137,25 @@
 // Main Css
 .menu-sidebar {
 	width: 260px;
-	min-height: 100vh;
+	height: 100vh;
 	position: fixed;
 	left: 0;
 	top: 0;
 	border-right: 1px solid hsl(var(--border));
+	background-color: hsl(var(--white));
+	@extend %transition;
+	overflow-y: auto;
 	.logo {
 		margin: 40px auto 40px;
 		text-align: center;
+	}
+	@include breakpoint(max-lg) {
+		transform: translateX(-100%);
+		z-index: 111;
+		padding-bottom: 50px;
+		&.active {
+			transform: translateX(0);
+		}
 	}
 }
 .menu {
@@ -103,6 +166,14 @@
 			padding-right: 15px;
 			display: block;
 			font-size: 24px;
+			@include breakpoint(max-xxl) {
+				padding: 13px 40px;
+				font-size: 20px;
+			}
+			@include breakpoint(max-lg) {
+				padding: 13px 40px;
+				font-size: 18px;
+			}
 			&.active,
 			&:hover {
 				color: hsl(var(--body));
@@ -121,10 +192,28 @@
 	width: calc(100% - 260px);
 	margin-left: auto;
 	padding: 50px 60px;
+	@extend %transition;
+	@include breakpoint(max-xxl) {
+		padding-inline: 40px;
+	}
+	@include breakpoint(max-lg) {
+		width: 100%;
+		padding: 5px 25px 40px;
+	}
+	@include breakpoint(max-sm) {
+		padding: 0 30px 30px;
+	}
 }
+.header-trigger {
+	font-size: 22px;
+}
+.search-trigger {
+	font-size: 22px;
+}
+
 // Main Css
 
-// Profile Section Starts Here 
+// Profile Section Starts Here
 .user-wrapper {
 	.user-thumb {
 		width: 150px;
@@ -132,7 +221,7 @@
 		border-radius: 50%;
 		overflow: hidden;
 		padding: 5px;
-		box-shadow: 0px 1px 4px hsl(var(--dark) / .3);
+		box-shadow: 0px 1px 4px hsl(var(--dark) / 0.3);
 		img {
 			width: 100%;
 			display: block;
@@ -143,29 +232,29 @@
 	}
 }
 .package-table {
-	padding: 30px 100px 50px;
+	padding: 30px 40px 40px;
 	border-radius: 30px;
-	background: #F9F9F9;
+	background: #f9f9f9;
 }
 .table-title {
 	font-style: italic;
 	font-weight: 500;
 	text-decoration: underline;
 }
-// Profile Section Ends Here 
+// Profile Section Ends Here
 
-// Package Section Starts Here 
+// Package Section Starts Here
 .package-item {
 	border-radius: 12px;
 	overflow: hidden;
-	box-shadow: 0px 0px 3px hsl(var(--dark) / .5);
+	box-shadow: 0px 0px 3px hsl(var(--dark) / 0.5);
 	&__thumb {
 		position: relative;
 		.base {
 			position: absolute;
 			top: 15px;
 			left: 15px;
-			background-color: hsl(var(--primary) / .9);
+			background-color: hsl(var(--primary) / 0.9);
 			font-weight: 400;
 			padding: 4px 15px;
 			border-radius: 10px;
@@ -178,7 +267,7 @@
 		padding: 30px;
 		.video-photo {
 			span {
-				color: #C9B4B4;
+				color: #c9b4b4;
 			}
 		}
 	}
@@ -191,7 +280,7 @@
 		}
 	}
 }
-// Package Section Ends Here 
+// Package Section Ends Here
 
 // Shop Section Starts Here
 .filter {
@@ -203,10 +292,10 @@
 			padding: 0;
 			&:hover {
 				color: hsl(var(--base-three));
-				border-color:  hsl(var(--base-three));
+				border-color: hsl(var(--base-three));
 			}
 			&.active {
-				border-color:  hsl(var(--base-three));
+				border-color: hsl(var(--base-three));
 				color: hsl(var(--base-three));
 			}
 		}
@@ -230,7 +319,7 @@
 		height: 50px;
 		border-radius: 4px;
 		background-color: hsl(var(--base) / 0.099);
-		@include breakpoint (max-xxl) {
+		@include breakpoint(max-xxl) {
 			width: 40px;
 			height: 40px;
 		}
@@ -240,7 +329,7 @@
 	}
 	.minus-plus {
 		cursor: pointer;
-		@include breakpoint (max-xxl) {
+		@include breakpoint(max-xxl) {
 			font-size: 13px;
 		}
 	}
@@ -248,7 +337,7 @@
 
 // Shop Section Ends Here
 
-// QR Section Starts Here 
+// QR Section Starts Here
 .qr-title {
 	font-size: 40px;
 }
@@ -262,10 +351,9 @@
 		}
 	}
 }
-// QR Section Ends Here 
+// QR Section Ends Here
 
-
-// Faq Section Starts Here 
+// Faq Section Starts Here
 .faq-header {
 	position: relative;
 	cursor: pointer;
@@ -278,13 +366,14 @@
 		height: 60px;
 		border-radius: 50%;
 		background-color: hsl(var(--dark));
-		@include breakpoint (max-sm) {
+		@include breakpoint(max-sm) {
 			width: 40px;
 			height: 40px;
 		}
-		&::before, &::after {
+		&::before,
+		&::after {
 			position: absolute;
-			content: '';
+			content: "";
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%, -50%);
@@ -294,7 +383,7 @@
 		&::before {
 			width: 3px;
 			height: 20px;
-			@include breakpoint (max-sm) {
+			@include breakpoint(max-sm) {
 				width: 2px;
 				height: 15px;
 			}
@@ -302,7 +391,7 @@
 		&::after {
 			width: 20px;
 			height: 3px;
-			@include breakpoint (max-sm) {
+			@include breakpoint(max-sm) {
 				width: 15px;
 				height: 2px;
 			}
@@ -310,19 +399,19 @@
 	}
 }
 .faq-item__title {
-	@include breakpoint (max-sm) {
+	@include breakpoint(max-sm) {
 		font-size: 18px;
 	}
 }
 .faq-item {
 	border-top: 1px solid hsl(var(--border));
 	.faq-item__content {
-	display: none;
-	p {
-		@include breakpoint (max-sm) {
-			font-size: 14px;
+		display: none;
+		p {
+			@include breakpoint(max-sm) {
+				font-size: 14px;
+			}
 		}
-	}
 	}
 	&.active {
 		.faq-item__content {
@@ -337,3 +426,25 @@
 		}
 	}
 }
+
+// Common Tabs
+.cmn--tabs {
+	box-shadow: 0 3px 3px hsl(var(--dark) / 0.1);
+	font-size: 18px;
+	gap: 30px 40px;
+	@include breakpoint(max-sm) {
+		font-size: 16px;
+	}
+	li {
+		a {
+			padding: 12px 0;
+			border-bottom: 2px solid transparent;
+			color: hsl(var(--body) / 0.6);
+			&.active {
+				border-bottom: 2px solid hsl(var(--dark));
+				color: hsl(var(--body));
+			}
+		}
+	}
+}
+// Common Tabs

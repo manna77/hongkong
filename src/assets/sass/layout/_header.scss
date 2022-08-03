@@ -3,3 +3,16 @@
 		max-width: 180px;
 	}
 }
+.responsive-header {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	z-index: 110;
+	padding: 15px 40px;
+	@include breakpoint(max-md) {
+		padding: 15px 25px;
+	}
+	@include breakpoint(max-sm) {
+		padding: 10px 30px;
+	}
+}
