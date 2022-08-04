@@ -51,7 +51,7 @@
 		border-radius: 15px;
 		box-shadow: 0 4px 4px hsl(var(--dark) / 0.15) !important;
 		font-size: 20px;
-		@include breakpoint(max-xl) {
+		@include breakpoint(max-xxl) {
 			font-size: 18px;
 			height: 70px;
 		}
@@ -176,16 +176,26 @@ div[class*="col"]:nth-child(2) {
 // Gallery Modal
 .gallery-modal,
 .share-modal,
-.success-modal {
+.success-modal,
+.logout-modal,
+.package-modal {
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%) scale(0.8);
 	max-width: 710px;
 	width: 100%;
 	z-index: 111;
-	display: none;
+	visibility: hidden;
+	opacity: 0;
 	overflow: auto;
+	box-shadow: 0 5px 25px hsl(var(--dark) / 0.15);
+	@extend %transition;
+	&.active {
+		visibility: visible;
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
 	@include breakpoint(max-lg) {
 		padding: 30px;
 		width: 90%;
@@ -194,8 +204,8 @@ div[class*="col"]:nth-child(2) {
 		padding: 20px;
 	}
 }
-.share-modal {
-	width: auto;
+.logout-modal {
+	max-width: 450px;
 }
 .popup-wrapper {
 	padding: 30px;
@@ -203,12 +213,17 @@ div[class*="col"]:nth-child(2) {
 	background-color: hsl(var(--white));
 }
 .success-modal {
-	width: 450px;
-	height: 400px;
+	max-width: 450px;
+	max-height: 400px;
+	width: 90%;
+	height: 100%;
 	background-color: hsl(var(--white));
 	border-radius: 20px;
 	text-align: center;
 	vertical-align: center;
+	@include breakpoint(max-md) {
+		max-height: 300px;
+	}
 }
 .modal-close {
 	position: absolute;
@@ -242,6 +257,29 @@ div[class*="col"]:nth-child(2) {
 		padding-bottom: 50px;
 		&.active {
 			transform: translateX(0);
+		}
+	}
+
+	.menu-icon,
+	.menu-icon-text {
+		display: none;
+	}
+
+	&.menu-icon-show {
+		width: auto;
+		.menu-icon {
+			display: block;
+			img {
+				margin: 0 auto;
+			}
+		}
+	}
+	&.menu-icon-text-show {
+		.menu-icon-text {
+			display: block;
+			img {
+				margin: 0 auto;
+			}
 		}
 	}
 }
@@ -302,6 +340,7 @@ div[class*="col"]:nth-child(2) {
 
 // Profile Section Starts Here
 .user-wrapper {
+	gap: 30px 50px;
 	.user-thumb {
 		width: 150px;
 		height: 150px;
@@ -314,6 +353,11 @@ div[class*="col"]:nth-child(2) {
 			display: block;
 		}
 	}
+	.user-content {
+		@include breakpoint(max-md) {
+			width: 100%;
+		}
+	}
 	.cmn--btn {
 		border-radius: 25px;
 	}
@@ -322,6 +366,10 @@ div[class*="col"]:nth-child(2) {
 	padding: 30px 40px 40px;
 	border-radius: 30px;
 	background: #f9f9f9;
+	@include breakpoint(max-sm) {
+		padding: 0;
+		background-color: transparent;
+	}
 	.badge {
 		width: 70px;
 		padding-left: 0px;
@@ -337,9 +385,10 @@ div[class*="col"]:nth-child(2) {
 
 // Package Section Starts Here
 .package-item {
-	border-radius: 12px;
+	border-radius: 20px;
 	overflow: hidden;
 	box-shadow: 0px 0px 3px hsl(var(--dark) / 0.5);
+	background-color: hsl(var(--white));
 	&__thumb {
 		position: relative;
 		.base {
@@ -350,6 +399,10 @@ div[class*="col"]:nth-child(2) {
 			font-weight: 400;
 			padding: 4px 15px;
 			border-radius: 10px;
+			@include breakpoint(max-md) {
+				font-size: 15px;
+				border-radius: 5px;
+			}
 		}
 		img {
 			width: 100%;
@@ -371,6 +424,11 @@ div[class*="col"]:nth-child(2) {
 			color: hsl(var(--white));
 		}
 	}
+	&.style--two {
+		.cmn--btn {
+			border-radius: 10px;
+		}
+	}
 }
 
 // Package Section Ends Here
@@ -383,7 +441,7 @@ div[class*="col"]:nth-child(2) {
 			border-bottom: 2px solid transparent;
 			color: hsl(var(--body));
 			padding: 0;
-			@include breakpoint (max-xxl) {
+			@include breakpoint(max-xxl) {
 				font-size: 18px;
 			}
 			&:hover {
@@ -449,7 +507,9 @@ div[class*="col"]:nth-child(2) {
 // Cart Section Starts Here
 .cart-table {
 	tr {
-		background-color: transparent !important;
+		@include breakpoint(md) {
+			background-color: transparent !important;
+		}
 	}
 	th {
 		background-color: transparent !important;
@@ -459,6 +519,19 @@ div[class*="col"]:nth-child(2) {
 		border-radius: 10px;
 		overflow: hidden;
 		border: 1px solid hsl(var(--border));
+		max-width: 120px;
+		@include breakpoint(max-sm) {
+			max-width: 80px;
+		}
+		img {
+			width: 100%;
+			object-fit: contain;
+		}
+	}
+	.title {
+		@include breakpoint(max-sm) {
+			font-size: 15px;
+		}
 	}
 	.cross {
 		font-size: 20px;
@@ -466,13 +539,18 @@ div[class*="col"]:nth-child(2) {
 	}
 }
 .cart-control-bg {
-	background-color: hsl(var(--base) / 0.05);
-	border-radius: 5px;
 	.minus-plus {
 		color: hsl(var(--base-three));
+		padding: 10px;
+		background-color: hsl(var(--base) / 0.05);
+		height: 45px;
 	}
 	.product-number {
 		background-color: transparent;
+		padding: 10px;
+		background-color: hsl(var(--base) / 0.05);
+		height: 45px;
+		border-radius: 0;
 	}
 }
 .cart-bottom {

@@ -14,7 +14,7 @@ if (trigger || dropdown) {
 			e.stopPropagation();
 			dropdown.toggleClass("active");
 			trigger.toggleClass("active");
-			// $('.overlay').toggleClass("active-color");
+			$(".overlay").toggleClass("active-color");
 		});
 	});
 	dropdown.each(function () {
@@ -26,7 +26,7 @@ if (trigger || dropdown) {
 		if (parseInt(screenSize) < parseInt(991)) {
 			dropdown.removeClass("active");
 			trigger.removeClass("active");
-			// $('.overlay').removeClass("active-color");
+			$(".overlay").removeClass("active-color");
 		}
 	});
 }
@@ -39,7 +39,7 @@ if (trigger2 || dropdown2) {
 		$(this).on("click", function (e) {
 			e.stopPropagation();
 			dropdown2.toggleClass("active");
-			// $('.overlay').toggleClass("active-color");
+			$(".overlay").toggleClass("active-color");
 		});
 	});
 	dropdown2.each(function () {
@@ -50,7 +50,7 @@ if (trigger2 || dropdown2) {
 	$(document).on("click", function () {
 		if (parseInt(screenSize) < parseInt(991)) {
 			dropdown2.removeClass("active");
-			// $('.overlay').removeClass("active-color");
+			$(".overlay").removeClass("active-color");
 		}
 	});
 }
@@ -203,32 +203,133 @@ $(".menu li a").each(function () {
 });
 
 // Gallery Modal
-$(".gallery-item").on("click", function (e) {
-	$(".gallery-modal").show(300);
-	$(".overlay").addClass("active-color");
-});
 $(".overlay, .modal-close").on("click", function (e) {
 	$(".overlay").removeClass("active-color");
-	$(".gallery-modal").hide(300);
-	$(".share-modal").hide(300);
-	$(".success-modal").hide(300);
+	$(".gallery-modal").removeClass("active");
+	$(".share-modal").removeClass("active");
+	$(".success-modal").removeClass("active");
 });
 // Gallery Modal
 
-// Share Modal
-$(".share-btn").on("click", function (e) {
-	$(".gallery-modal").hide();
-	e.stopPropagation();
-	$(".share-modal").show();
-	$(".overlay").addClass("active-color");
-});
-// Share Modal
+// Gallery Modal Click Event
+let trigger3 = $(".gallery-item");
+let dropdown3 = $(".gallery-modal");
+if (trigger3 || dropdown3) {
+	trigger3.each(function () {
+		$(this).on("click", function (e) {
+			e.stopPropagation();
+			dropdown3.toggleClass("active");
+			$(".overlay").toggleClass("active-color");
+		});
+	});
+	dropdown3.each(function () {
+		$(this).on("click", function (e) {
+			e.stopPropagation();
+		});
+	});
+	$(document).on("click", function () {
+		dropdown3.removeClass("active");
+		$(".overlay").addClass("active-color");
+	});
+}
 
-// Download Success
-$(".download-btn").on("click", function (e) {
-	$(".gallery-modal").hide();
-	e.stopPropagation();
-	$(".success-modal").show();
-	$(".overlay").addClass("active-color");
+// Share Modal Click Event
+let trigger4 = $(".share-btn");
+let dropdown4 = $(".share-modal");
+if (trigger4 || dropdown4) {
+	trigger4.each(function () {
+		$(this).on("click", function (e) {
+			e.stopPropagation();
+			dropdown4.toggleClass("active");
+			dropdown3.removeClass("active");
+			$(".overlay").addClass("active-color");
+		});
+	});
+	dropdown4.each(function () {
+		$(this).on("click", function (e) {
+			e.stopPropagation();
+		});
+	});
+	$(document).on("click", function () {
+		dropdown4.removeClass("active");
+		$(".overlay").removeClass("active-color");
+	});
+}
+
+// Downaload Modal Click Event
+let trigger5 = $(".download-btn");
+let dropdown5 = $(".success-modal");
+if (trigger5 || dropdown5) {
+	trigger5.each(function () {
+		$(this).on("click", function (e) {
+			e.stopPropagation();
+			dropdown3.removeClass("active");
+			dropdown5.toggleClass("active");
+			$(".overlay").addClass("active-color");
+		});
+	});
+	dropdown5.each(function () {
+		$(this).on("click", function (e) {
+			e.stopPropagation();
+		});
+	});
+	$(document).on("click", function () {
+		dropdown5.removeClass("active");
+		$(".overlay").removeClass("active-color");
+	});
+}
+
+// Logout Modal Click Event
+let trigger6 = $(".logout-btn");
+let dropdown6 = $(".logout-modal");
+if (trigger6 || dropdown6) {
+	trigger6.each(function () {
+		$(this).on("click", function (e) {
+			e.stopPropagation();
+			dropdown3.removeClass("active");
+			dropdown6.toggleClass("active");
+			$(".overlay").addClass("active-color");
+		});
+	});
+	dropdown6.each(function () {
+		$(this).on("click", function (e) {
+			e.stopPropagation();
+		});
+	});
+	$(document).on("click", function () {
+		dropdown6.removeClass("active");
+		$(".overlay").removeClass("active-color");
+	});
+}
+
+// Logout Modal Click Event
+let trigger7 = $(".buy-package");
+let dropdown7 = $(".package-modal");
+if (trigger7 || dropdown7) {
+	trigger7.each(function () {
+		$(this).on("click", function (e) {
+			e.stopPropagation();
+			dropdown3.removeClass("active");
+			dropdown7.toggleClass("active");
+			$(".overlay").addClass("active-color");
+		});
+	});
+	dropdown7.each(function () {
+		$(this).on("click", function (e) {
+			e.stopPropagation();
+		});
+	});
+	$(document).on("click", function () {
+		dropdown7.removeClass("active");
+		$(".overlay").removeClass("active-color");
+	});
+}
+
+$(".logo").on("click", function (e) {
+	$(".menu-sidebar").toggleClass("menu-icon-show");
+	$(".menu-sidebar").toggleClass("menu-icon-text-show");
+	var menuSidebarWidth = $(".menu-sidebar").width();
+	var bodyContent = $(".body-content");
+	var bodyContentWidth = "100" + menuSidebarWidth;
+	bodyContent.css("width", "100%" + "-" + menuSidebarWidth);
 });
-// Download Success

@@ -26,6 +26,13 @@
     <!-- Overlay -->
     <div class="overlay"></div>
     <a href="javascript::void(0)" class="scrollToTop"><i class="las la-chevron-up"></i></a>
+<!-- Header Section -->
+<div class="responsive-header d-flex justify-content-between align-items-center bg-white d-lg-none">
+    <div class="header-trigger"><i class="las la-bars"></i></div>
+    <h4 class="page-title">Profile</h4>
+    <span class="search-trigger"><i class="las la-search"></i></span>
+</div>
+<!-- Header Section -->
 
 
 <!-- Profile Section Starts Here -->
@@ -33,44 +40,44 @@
     <div class="menu-sidebar">
         <div class="logo"><img src="assets/images/logo.png" alt="logo"></div>
         <ul class="menu">
-            <li><a href="index.html"><img src="assets/images/icon/gallery.png" alt=""> Gallery</a></li>
-            <li><a href="profile.html"><img src="assets/images/icon/profile.png" alt=""> Profile</a></li>
-            <li><a href="package.html"><img src="assets/images/icon/package.png" alt=""> Package</a></li>
-            <li><a href="qr.html"><img src="assets/images/icon/qr.png" alt=""> My QR</a></li>
-            <li><a href="shop.html"><img src="assets/images/icon/shop.png" alt=""> Shop</a></li>
-            <li><a href="cart.html"><img src="assets/images/icon/cart.png" alt=""> Cart</a></li>
+            <li><a href="index.html"><img src="assets/images/icon/gallery.png" alt="icon"> Gallery</a></li>
+            <li><a href="profile.html"><img src="assets/images/icon/profile.png" alt="icon"> Profile</a></li>
+            <li><a href="package.html"><img src="assets/images/icon/package.png" alt="icon"> Package</a></li>
+            <li><a href="qr.html"><img src="assets/images/icon/qr.png" alt="icon"> My QR</a></li>
+            <li><a href="shop.html"><img src="assets/images/icon/shop.png" alt="icon"> Shop</a></li>
+            <li><a href="cart.html"><img src="assets/images/icon/cart.png" alt="icon"> Cart</a></li>
         </ul>
         <ul class="menu mt-auto">
             <li>
-                <a href="faq.html"><img src="assets/images/icon/faq.png" alt=""> FAQs</a>
+                <a href="faq.html"><img src="assets/images/icon/faq.png" alt="icon"> FAQs</a>
             </li>
             <li>
-                <a href="logout.html"><img src="assets/images/icon/logout.png" alt=""> Logout</a>
+                <a href="javascript:void(0)" class="logout-btn"><img src="assets/images/icon/logout.png" alt="icon"> Logout</a>
             </li>
         </ul>
     </div>
     <div class="body-content">
-        <div class="top-area">
+        <div class="top-area d-none d-lg-block">
             <div class="search-box d-flex flex-wrap align-items-center">
                 <h3 class="title">Profile</h3>
             </div>
         </div>
-        <div class="user-wrapper d-flex flex-wrap align-items-center mb-5">
-            <div class="user-thumb me-5">
+        <div class="user-wrapper d-flex flex-wrap justify-content-center justify-content-lg-start align-items-center mb-5">
+            <div class="user-thumb">
                 <img src="assets/images/thumb/user.png" alt="thumb">
             </div>
-            <div class="user-content">
-                <h4 class="name">Muhammad Fernandy</h4>
-                <ul class="user-info-list d-flex flex-wrap align-items-center gap-5">
+            <div class="user-content text-center text-md-start">
+                <h4 class="name mb-3">Muhammad Fernandy</h4>
+                <ul class="user-info-list d-flex flex-wrap justify-content-center align-items-center gap-3">
                     <li><span class="pe-3"><img src="assets/images/icon/user.png" alt="icon"></span> Brebes, Sirampog</li>
                     <li><span class="pe-3"><img src="assets/images/icon/mail.png" alt="icon"></span> Brebes, Sirampog</li>
-                    <li><a href="#0" class="cmn--btn btn--lg">Settings</a></li>
                 </ul>
             </div>
+            <a href="#0" class="cmn--btn btn--lg">Settings</a>
         </div>
         <div class="package-table mb-4">
             <h5 class="table-title mb-4">QR Packages</h5>
-            <table class="table border-0 w-100">
+            <table class="table border-0 w-100 table--responsive--md">
                 <thead>
                     <tr>
                         <th>Package</th>
@@ -81,10 +88,10 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
+                        <td data-label="Package">-</td>
+                        <td data-label="From">-</td>
+                        <td data-label="To">-</td>
+                        <td data-label="Status">-</td>
                     </tr>
                 </tbody>
             </table>
@@ -93,7 +100,7 @@
             <div class="col-xxl-6">
                 <div class="package-table">
                     <h5 class="table-title mb-4">Shop Order</h5>
-                    <table class="table border-0 w-100">
+                    <table class="table border-0 w-100   table--responsive--md">
                         <thead>
                             <tr>
                                 <th>Order#</th>
@@ -105,18 +112,18 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>20220100289</td>
-                                <td>2022-1-27</td>
-                                <td>Pick Up</td>
-                                <td>hkd 100.00</td>
-                                <td><a href="#0" class="badge badge--three text-white">Apply</a></td>
+                                <td data-label="Order#">20220100289</td>
+                                <td data-label="Date">2022-1-27</td>
+                                <td data-label="Delivery">Pick Up</td>
+                                <td data-label="Price">hkd 100.00</td>
+                                <td data-label="Refund"><a href="#0" class="badge badge--three text-white">Apply</a></td>
                             </tr>
                             <tr>
-                                <td>20220100289</td>
-                                <td>2022-1-27</td>
-                                <td>Pick Up</td>
-                                <td>hkd 100.00</td>
-                                <td><a href="#0" class="badge badge--three text-white">Apply</a></td>
+                                <td data-label="Order#"">20220100289</td>
+                                <td data-label=" Date">2022-1-27</td>
+                                <td data-label="Delivery">Pick Up</td>
+                                <td data-label="Price">hkd 100.00</td>
+                                <td data-label="Refund"><a href="#0" class="badge badge--three text-white">Apply</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -124,31 +131,31 @@
             </div>
             <div class="col-xxl-6">
                 <div class="package-table">
-                    <h5 class="table-title mb-4">Online Purchased Packages</h5>
-                    <table class="table border-0 w-100">
+                    <h5 class="table-title mb-4">Shop Order</h5>
+                    <table class="table border-0 w-100   table--responsive--md">
                         <thead>
                             <tr>
-                                <th>Package</th>
-                                <th>From</th>
-                                <th>To</th>
-                                <th>Status</th>
+                                <th>Order#</th>
+                                <th>Date</th>
+                                <th>Delivery</th>
+                                <th>Price</th>
                                 <th>Refund</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>20220100289</td>
-                                <td>2022-1-27</td>
-                                <td>Pick Up</td>
-                                <td>hkd 100.00</td>
-                                <td><a href="#0" class="badge badge--three text-white text-center">Apply</a></td>
+                                <td data-label="Order#">20220100289</td>
+                                <td data-label="Date">2022-1-27</td>
+                                <td data-label="Delivery">Pick Up</td>
+                                <td data-label="Price">hkd 100.00</td>
+                                <td data-label="Refund"><a href="#0" class="badge badge--three text-white">Apply</a></td>
                             </tr>
                             <tr>
-                                <td>20220100289</td>
-                                <td>2022-1-27</td>
-                                <td>Pick Up</td>
-                                <td>hkd 100.00</td>
-                                <td><a href="#0" class="badge badge--primary text-white text-center">Rejected</a></td>
+                                <td data-label="Order#"">20220100289</td>
+                                <td data-label=" Date">2022-1-27</td>
+                                <td data-label="Delivery">Pick Up</td>
+                                <td data-label="Price">hkd 100.00</td>
+                                <td data-label="Refund"><a href="#0" class="badge badge--three text-white">Apply</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -159,6 +166,48 @@
 </div>
 <!-- Profile Section Ends Here -->
 
+
+
+<!-- Gallery Popup -->
+<div class="gallery-item style--two gallery-modal">
+    <img src="assets/images/thumb/gallery1.png" alt="thumb">
+    <a href="javascript:void(0)" class="cmn--btn d-block text-center mt-3 mt-sm-4 download-btn">Download</a>
+    <a href="javascript:void(0)" class="cmn--btn d-block text-center mt-3 mt-sm-4 active share-btn">Share</a>
+</div>
+<!-- Gallery Popup -->
+
+<!-- Share Popup -->
+<div class="popup-wrapper share-modal">
+    <p class="text-center fs--20px mb-3 mb-sm-4">Share in you social networks </p>
+    <ul class="social-links d-flex flex-wrap gap-3 justify-content-center">
+        <li><a href="javascript:void(0)"><i class="fas fa-copy"></i></a></li>
+        <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href=""><i class="fab fa-twitter"></i></a></li>
+        <li><a href=""><i class="fab fa-instagram"></i></a></li>
+    </ul>
+</div>
+<!-- Share Popup -->
+
+<!-- Share Success -->
+<div class="popup-wrapper success-modal">
+    <div class="d-flex flex-wrap align-items-center justify-content-center flex-column h-100">
+        <img src="assets/images/icon/success.png" alt="icon">
+        <p class="fs--20px mt-2 text-center">Download Succeeded !</p>
+    </div>
+    <span class="modal-close"><i class="las la-times"></i></span>
+</div>
+<!-- Share Success -->
+
+<!-- Logout Success -->
+<div class="popup-wrapper logout-modal">
+    <div class="text-center">
+        <img src="assets/images/icon/alert.png" alt="thumb" class="mw-100">
+        <h4 class="mb-4 mb-sm-5 mt-4">Are You Sure !</h4>
+    </div>
+    <a href="javascript:void(0)" class="cmn--btn d-block text-center mt-3 mt-sm-4 download-btn">Confirm</a>
+    <a href="javascript:void(0)" class="cmn--btn d-block text-center mt-3 mt-sm-4 active share-btn">Cancel</a>
+</div>
+<!-- Logout Success -->
 
 
 
