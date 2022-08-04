@@ -62,6 +62,9 @@
 	font-size: 18px;
 	background-color: hsl(var(--base-three));
 	border-color: hsl(var(--base-three));
+	@include breakpoint (max-lg) {
+		font-size: 16px;
+	}
 	&:hover {
 		color: hsl(var(--base-three));
 	}

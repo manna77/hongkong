@@ -1,0 +1,126 @@
+<!-- meta tags and other links -->
+@@include('../partial-html/_template-top.html')
+
+<!-- Cart Section Starts Here -->
+<div class="cart-section">
+    <div class="menu-sidebar">
+        <div class="logo"><img src="assets/images/logo.png" alt="logo"></div>
+        <ul class="menu">
+            <li><a href="index.html"><img src="assets/images/icon/gallery.png" alt=""> Gallery</a></li>
+            <li><a href="profile.html"><img src="assets/images/icon/profile.png" alt=""> Profile</a></li>
+            <li><a href="package.html"><img src="assets/images/icon/package.png" alt=""> Package</a></li>
+            <li><a href="qr.html"><img src="assets/images/icon/qr.png" alt=""> My QR</a></li>
+            <li><a href="shop.html"><img src="assets/images/icon/shop.png" alt=""> Shop</a></li>
+            <li><a href="cart.html"><img src="assets/images/icon/cart.png" alt=""> Cart</a></li>
+        </ul>
+        <ul class="menu mt-auto">
+            <li>
+                <a href="faq.html"><img src="assets/images/icon/faq.png" alt=""> FAQs</a>
+            </li>
+            <li>
+                <a href="logout.html"><img src="assets/images/icon/logout.png" alt=""> Logout</a>
+            </li>
+        </ul>
+    </div>
+    <div class="body-content">
+        <div class="top-area">
+            <div class="search-box d-flex flex-wrap align-items-center">
+                <h3 class="title w-100">Cart</h3>
+            </div>
+        </div>
+        <div class="table-wrapper">
+            <table class="table cart-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="text-start">PRODUCT</th>
+                        <th></th>
+                        <th>QTY</th>
+                        <th>UNIT PRICE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#0" class="cross"><i class="fas fa-times"></i></a></td>
+                        <td class="d-flex flex-wrap align-items-center gap-2 gap-lg-3">
+                            <div class="thumb">
+                                <img src="assets/images/thumb/product1.png" alt="thumb">
+                            </div>
+                            <h4 class="title">My Smiles</h4>
+                        </td>
+                        <td><a href="#0">$20,45</a></td>
+                        <td>
+                        <div class="cart-right cart-control-bg">
+                            <form action="#" class="d-flex align-items-center justify-content-center">
+                                <span class="minus-plus cart-minus"><i class="fas fa-minus"></i></span>
+                                <input type="text" value="1" class="product-number mx-xxl-5 mx-4 text-center">
+                                <span class="minus-plus cart-plus"><i class="fas fa-plus"></i></span>
+                            </form>
+                        </div>
+                        </td>
+                        <td><a href="#0">$20,45</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#0" class="cross"><i class="fas fa-times"></i></a></td>
+                        <td class="d-flex flex-wrap align-items-center gap-2 gap-lg-3">
+                            <div class="thumb">
+                                <img src="assets/images/thumb/product2.png" alt="thumb">
+                            </div>
+                            <h4 class="title">Hardcover Folder</h4>
+                        </td>
+                        <td><a href="#0">$140,00</a></td>
+                        <td>
+                        <div class="cart-right cart-control-bg">
+                            <form action="#" class="d-flex align-items-center justify-content-center">
+                                <span class="minus-plus cart-minus"><i class="fas fa-minus"></i></span>
+                                <input type="text" value="1" class="product-number mx-xxl-5 mx-4 text-center">
+                                <span class="minus-plus cart-plus"><i class="fas fa-plus"></i></span>
+                            </form>
+                        </div>
+                        </td>
+                        <td><a href="#0">$140,00</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="cart-bottom mt-5">
+                <div class="row justify-content-between gy-5">
+                    <div class="col-md-6 col-xl-4">
+                        <form class="voucher-form">
+                            <div class="from-group">
+                                <input type="text" placeholder="Voucher code" class="form-control form--control">
+                            </div>
+                            <button type="submit" class="btn cmn--btn">Redeem</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="checkout-box">
+                            <ul class="checkout-list">
+                                <li class="d-flex flex-wrap justify-content-between">
+                                    <span>Subtotal</span>
+                                    <span>$160,45</span>
+                                </li>
+                                <li class="d-flex flex-wrap justify-content-between">
+                                    <span>Coupon</span>
+                                    <span>0,00</span>
+                                </li>
+                                <li class="d-flex flex-wrap justify-content-between py-3">
+                                    <span>TOTAL</span>
+                                    <span>$46,44</span>
+                                </li>
+                            </ul>
+                            <a href="#0" class="cmn--btn d-block text-center">Check out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Cart Section Ends Here -->
+
+
+@@include('../partial-html/_footer.html')
+@@include('../partial-html/_template-bottom.html')
+</body>
+
+</html>

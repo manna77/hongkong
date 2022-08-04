@@ -86,6 +86,93 @@
 		border-radius: 15px;
 	}
 }
+.video-item {
+	position: relative;
+	img {
+		border-radius: 10px;
+	}
+	&::before {
+		position: absolute;
+		content: "";
+		left: 20px;
+		top: 20px;
+		right: 20px;
+		bottom: 20px;
+		border-radius: 10px;
+		@include breakpoint(max-md) {
+			left: 0;
+			right: 0;
+			bottom: 0;
+			top: 0;
+		}
+	}
+	.create-video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding: 0 5px;
+		color: hsl(var(--white));
+		&.style--two {
+			font-size: 20px;
+			border: 2px solid hsl(var(--white));
+			width: 50px;
+			height: 50px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 auto;
+			border-radius: 50%;
+			@include breakpoint(max-md) {
+				width: 35px;
+				height: 35px;
+				font-size: 15px;
+			}
+		}
+		.video-icon {
+			font-size: 40px;
+			line-height: 1;
+			@include breakpoint(max-sm) {
+				font-size: 25px;
+			}
+		}
+		.text {
+			@include breakpoint(max-sm) {
+				font-size: 13px;
+			}
+		}
+	}
+}
+.bg-overlay {
+	position: relative;
+	&::before {
+		position: absolute;
+		content: "";
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: hsl(var(--dark) / 0.5);
+		border-radius: 10px;
+	}
+}
+div[class*="col"]:nth-child(1) {
+	.video-item {
+		&::before {
+			background: conic-gradient(from 177.91deg at 50% 50%, #4147d5 -122.66deg, #7bb9fa 51.24deg, #4147d5 237.34deg, #7bb9fa 411.24deg);
+		}
+	}
+}
+div[class*="col"]:nth-child(2) {
+	.video-item {
+		&::before {
+			background: conic-gradient(from 177.91deg at 50% 50%, #33a0ff -122.66deg, #7bb9fa 51.24deg, #33a0ff 237.34deg, #7bb9fa 411.24deg);
+		}
+	}
+}
 // Gallery Modal
 .gallery-modal,
 .share-modal,
@@ -235,6 +322,11 @@
 	padding: 30px 40px 40px;
 	border-radius: 30px;
 	background: #f9f9f9;
+	.badge {
+		width: 70px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
 }
 .table-title {
 	font-style: italic;
@@ -280,16 +372,20 @@
 		}
 	}
 }
+
 // Package Section Ends Here
 
 // Shop Section Starts Here
 .filter {
 	li {
 		a {
-			font-size: 22px;
+			font-size: 20px;
 			border-bottom: 2px solid transparent;
 			color: hsl(var(--body));
 			padding: 0;
+			@include breakpoint (max-xxl) {
+				font-size: 18px;
+			}
 			&:hover {
 				color: hsl(var(--base-three));
 				border-color: hsl(var(--base-three));
@@ -338,9 +434,6 @@
 // Shop Section Ends Here
 
 // QR Section Starts Here
-.qr-title {
-	font-size: 40px;
-}
 .qr-wrapper {
 	.qr-thumb {
 		padding: 15px;
@@ -353,6 +446,86 @@
 }
 // QR Section Ends Here
 
+// Cart Section Starts Here
+.cart-table {
+	tr {
+		background-color: transparent !important;
+	}
+	th {
+		background-color: transparent !important;
+		font-size: 18px !important;
+	}
+	.thumb {
+		border-radius: 10px;
+		overflow: hidden;
+		border: 1px solid hsl(var(--border));
+	}
+	.cross {
+		font-size: 20px;
+		color: hsl(var(--base));
+	}
+}
+.cart-control-bg {
+	background-color: hsl(var(--base) / 0.05);
+	border-radius: 5px;
+	.minus-plus {
+		color: hsl(var(--base-three));
+	}
+	.product-number {
+		background-color: transparent;
+	}
+}
+.cart-bottom {
+	border-top: 1px solid hsl(var(--border));
+	padding-top: 40px;
+}
+.voucher-form {
+	position: relative;
+	.form--control {
+		padding-right: 145px;
+		&:focus {
+			border-color: hsl(var(--base-three));
+		}
+	}
+	.cmn--btn {
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		bottom: 0px;
+		padding: 0px 30px;
+		font-size: 16px;
+		font-weight: 400;
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
+		background-color: hsl(var(--base-three)) !important;
+		color: hsl(var(--white)) !important;
+		border-color: hsl(var(--base-three));
+	}
+}
+.checkout-box {
+	.cmn--btn {
+		font-size: 16px;
+	}
+}
+.checkout-list {
+	li {
+		padding: 5px 0px;
+		&:first-child {
+			padding-top: 0px;
+		}
+		&:nth-child(2) {
+			border-bottom: 1px solid hsl(var(--border));
+			padding-bottom: 15px;
+		}
+		&:last-child {
+			span {
+				font-weight: 700;
+			}
+		}
+	}
+}
+// Cart Section Ends Here
+
 // Faq Section Starts Here
 .faq-header {
 	position: relative;
@@ -362,13 +535,18 @@
 		right: 0px;
 		top: 50%;
 		transform: translateY(-50%);
-		width: 60px;
-		height: 60px;
+		width: 50px;
+		height: 50px;
+		border: 1px solid hsl(var(--dark));
 		border-radius: 50%;
-		background-color: hsl(var(--dark));
-		@include breakpoint(max-sm) {
+		@include transition;
+		@include breakpoint(max-lg) {
 			width: 40px;
 			height: 40px;
+		}
+		@include breakpoint(max-sm) {
+			width: 36px;
+			height: 36px;
 		}
 		&::before,
 		&::after {
@@ -378,12 +556,12 @@
 			top: 50%;
 			transform: translate(-50%, -50%);
 			@include transition;
-			background-color: hsl(var(--white));
+			background-color: hsl(var(--dark));
 		}
 		&::before {
 			width: 3px;
 			height: 20px;
-			@include breakpoint(max-sm) {
+			@include breakpoint(max-lg) {
 				width: 2px;
 				height: 15px;
 			}
@@ -391,7 +569,7 @@
 		&::after {
 			width: 20px;
 			height: 3px;
-			@include breakpoint(max-sm) {
+			@include breakpoint(max-lg) {
 				width: 15px;
 				height: 2px;
 			}
@@ -404,7 +582,7 @@
 	}
 }
 .faq-item {
-	border-top: 1px solid hsl(var(--border));
+	border-bottom: 1px solid hsl(var(--border));
 	.faq-item__content {
 		display: none;
 		p {
@@ -420,6 +598,11 @@
 	}
 	&.open {
 		.faq-icon {
+			background-color: hsl(var(--dark));
+			&::before,
+			&::after {
+				background-color: hsl(var(--white));
+			}
 			&::before {
 				height: 0px;
 			}
