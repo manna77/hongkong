@@ -203,11 +203,12 @@ $(".menu li a").each(function () {
 });
 
 // Gallery Modal
-$(".overlay, .modal-close").on("click", function (e) {
+$(".overlay, .modal-close, .modal-cancel").on("click", function (e) {
 	$(".overlay").removeClass("active-color");
 	$(".gallery-modal").removeClass("active");
 	$(".share-modal").removeClass("active");
 	$(".success-modal").removeClass("active");
+	$(".logout-modal").removeClass("active");
 });
 // Gallery Modal
 
@@ -330,6 +331,17 @@ $(".logo").on("click", function (e) {
 	$(".menu-sidebar").toggleClass("menu-icon-text-show");
 	var menuSidebarWidth = $(".menu-sidebar").width();
 	var bodyContent = $(".body-content");
-	var bodyContentWidth = "100" + menuSidebarWidth;
-	bodyContent.css("width", "100%" + "-" + menuSidebarWidth);
+
+	if (parseInt(screenSize) > parseInt(991)) {
+		bodyContent.css("width", screenSize - menuSidebarWidth);
+	}
 });
+window.addEventListener("resize", function (e) {
+	if (parseInt(screenSize) > parseInt(991)) {
+		var menuSidebarWidth = $(".menu-sidebar").width();
+		$(".body-content").css("width", screenSize - menuSidebarWidth);
+	}
+});
+
+var menuBottomWidth = $(".responsive-bottom-menu").height();
+$(".body-content").css("margin-bottom", menuBottomWidth + 40 + "px");

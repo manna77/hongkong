@@ -378,7 +378,7 @@ ul {
     flex-wrap: wrap;
 }
 
-.social-links li a {
+.qr-scan-btn, .social-links li a {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -646,7 +646,6 @@ h6 {
     outline: none !important;
     box-shadow: none !important;
     border-radius: 5px;
-    z-index: 1;
 }
 
 .btn.btn--lg,
@@ -683,8 +682,6 @@ h6 {
 .cmn--btn {
     font-size: 22px;
     color: hsl(var(--white));
-    position: relative;
-    z-index: 1;
     overflow: hidden;
     border: 2px solid hsl(var(--base));
 }
@@ -2076,6 +2073,31 @@ div[class*=col]:nth-child(2) .video-item::before {
     font-size: 22px;
 }
 
+.responsive-bottom-menu {
+    background-color: hsl(var(--light));
+    border-radius: 20px;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+}
+
+.responsive-bottom-menu .qr-scan-btn {
+    transform: translateY(-50%);
+}
+
+.qr-scan-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: hsl(var(--base));
+}
+
+.qr-scan-btn img {
+    max-width: 100%;
+}
+
 .user-wrapper {
     gap: 30px 50px;
 }
@@ -2487,5 +2509,16 @@ div[class*=col]:nth-child(2) .video-item::before {
 .cmn--tabs li a.active {
     border-bottom: 2px solid hsl(var(--dark));
     color: hsl(var(--body));
+}
+
+.card-item {
+    border: 2px solid hsl(Var(--base));
+    box-shadow: 0px 2 5 hsl(var(--dark)/0.1);
+    border-radius: 8px;
+    padding: 20px 15px;
+}
+
+.card-item .icon img {
+    width: 25px;
 }
 /*# sourceMappingURL=main.css.map */

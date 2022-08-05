@@ -335,7 +335,28 @@ div[class*="col"]:nth-child(2) {
 .search-trigger {
 	font-size: 22px;
 }
-
+.responsive-bottom-menu {
+	background-color: hsl(var(--light));
+	border-radius: 20px;
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 90%;
+	.qr-scan-btn {
+		transform: translateY(-50%);
+	}
+}
+.qr-scan-btn {
+	width: 50px;
+	height: 50px;
+	@extend %flex-center;
+	border-radius: 50%;
+	background-color: hsl(var(--base));
+	img {
+		max-width: 100%;
+	}
+}
 // Main Css
 
 // Profile Section Starts Here
@@ -709,3 +730,17 @@ div[class*="col"]:nth-child(2) {
 	}
 }
 // Common Tabs
+
+// Payment Card
+.card-item {
+	border: 2px solid hsl(Var(--base));
+	box-shadow: 0px 2 5 hsl(var(--dark) / 0.1);
+	border-radius: 8px;
+	padding: 20px 15px;
+	.icon {
+		img {
+			width: 25px;
+		}
+	}
+}
+// Payment Card
