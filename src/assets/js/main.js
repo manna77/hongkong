@@ -188,11 +188,6 @@ $(".faq-header").on("click", function (e) {
 	}
 });
 
-$(".video-button").magnificPopup({
-	type: "iframe",
-	// other options
-});
-
 // Active Path Active
 var path = location.pathname.split("/");
 var current = location.pathname.split("/")[path.length - 1];
